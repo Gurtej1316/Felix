@@ -1,0 +1,14 @@
+{
+  "resourceName": "OrgRolePermissions",
+  "tableName": "OrgRolePermissions",
+  "partitionKey": {
+    "fieldName": "orgId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "roleId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

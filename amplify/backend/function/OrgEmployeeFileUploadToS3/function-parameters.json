@@ -1,0 +1,19 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "Org": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "EmployeeFileList": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

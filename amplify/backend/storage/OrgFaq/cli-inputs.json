@@ -1,0 +1,14 @@
+{
+  "resourceName": "OrgFaq",
+  "tableName": "OrgFaq",
+  "partitionKey": {
+    "fieldName": "orgId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "faqId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

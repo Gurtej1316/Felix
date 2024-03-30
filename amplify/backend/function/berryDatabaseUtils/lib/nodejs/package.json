@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.5",
+    "dynamoose": "^2.8.2",
+    "lodash": "^4.17.21",
+    "body-parser": "^1.17.1",
+    "uniqid": "^5.3.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {}
+}

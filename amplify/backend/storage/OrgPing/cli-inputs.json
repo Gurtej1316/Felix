@@ -1,0 +1,14 @@
+{
+  "resourceName": "OrgPing",
+  "tableName": "OrgPing",
+  "partitionKey": {
+    "fieldName": "orgId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "pingId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

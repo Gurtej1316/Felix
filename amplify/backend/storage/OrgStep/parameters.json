@@ -1,0 +1,7 @@
+{
+    "tableName": "OrgStep",
+    "partitionKeyName": "orgId",
+    "partitionKeyType": "S",
+    "sortKeyName": "stepId",
+    "sortKeyType": "S"
+}

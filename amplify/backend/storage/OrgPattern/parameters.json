@@ -1,0 +1,7 @@
+{
+    "tableName": "OrgPattern",
+    "partitionKeyName": "orgId",
+    "partitionKeyType": "S",
+    "sortKeyName": "patternId",
+    "sortKeyType": "S"
+}

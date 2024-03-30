@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "storage": {
+      "OrgUser": [
+        "read",
+        "update"
+      ],
+      "Org": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

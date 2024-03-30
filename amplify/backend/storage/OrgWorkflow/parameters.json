@@ -1,0 +1,7 @@
+{
+    "tableName": "OrgWorkflow",
+    "partitionKeyName": "orgId",
+    "partitionKeyType": "S",
+    "sortKeyName": "workflowId",
+    "sortKeyType": "S"
+}

@@ -1,0 +1,7 @@
+{
+    "tableName": "OrgUser",
+    "partitionKeyName": "orgId",
+    "partitionKeyType": "S",
+    "sortKeyName": "userId",
+    "sortKeyType": "S"
+}

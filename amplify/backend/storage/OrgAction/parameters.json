@@ -1,0 +1,7 @@
+{
+    "tableName": "OrgAction",
+    "partitionKeyName": "orgId",
+    "partitionKeyType": "S",
+    "sortKeyName": "actionId",
+    "sortKeyType": "S"
+}

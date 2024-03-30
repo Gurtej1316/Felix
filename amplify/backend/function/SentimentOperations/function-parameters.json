@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "storage": {
+      "Conversations": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berryCommonUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    }
+  ]
+}

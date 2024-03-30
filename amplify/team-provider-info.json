@@ -1,0 +1,264 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-berry-staging-192237-authRole",
+      "UnauthRoleArn": "arn:aws:iam::665647955003:role/amplify-berry-staging-192237-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::665647955003:role/amplify-berry-staging-192237-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-berry-staging-192237-deployment",
+      "UnauthRoleName": "amplify-berry-staging-192237-unauthRole",
+      "StackName": "amplify-berry-staging-192237",
+      "StackId": "arn:aws:cloudformation:us-east-1:665647955003:stack/amplify-berry-staging-192237/be5c4910-6d7e-11ee-9584-0eb2c9b8a607",
+      "AmplifyAppId": "d1og1abovjr2uh",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-berry-staging-192237-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "cognitod96d0b0e": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AuthOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/AuthOperations-66476578697330572b2b-build.zip"
+        },
+        "BerryActionProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryActionProcessor-38516750623754715637-build.zip"
+        },
+        "BerryCampaignCompletionProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryCampaignCompletionProcessor-33327255586541546b42-build.zip"
+        },
+        "BerryCustomCognitoMailMsgHandler": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryCustomCognitoMailMsgHandler-366c7868586e4334496d-build.zip"
+        },
+        "BerryIdeaProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryIdeaProcessor-44746f556e32307a5678-build.zip"
+        },
+        "BerryIntroProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryIntroProcessor-544932323963757a5034-build.zip"
+        },
+        "BerryWebOrgDataScrapper": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/BerryWebOrgDataScrapper-56756a51323259636170-build.zip"
+        },
+        "ConversationsOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/ConversationsOperations-5438584a713861614336-build.zip"
+        },
+        "GTokenOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/GTokenOperations-3379476c694575637768-build.zip"
+        },
+        "JourneyEventProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/JourneyEventProcessor-7670587a4849656b764f-build.zip"
+        },
+        "LexActionProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexActionProcessor-737477554a754a4e726b-build.zip"
+        },
+        "LexCampaignProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexCampaignProcessor-586b6b646d446d416f50-build.zip"
+        },
+        "LexContextChecker": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexContextChecker-39344673623048366d2f-build.zip"
+        },
+        "LexFaqFulfilment": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexFaqFulfilment-7a70437454514b627771-build.zip"
+        },
+        "LexFaqVoteCapture": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexFaqVoteCapture-6349784d2f4d49695477-build.zip"
+        },
+        "LexIdeaProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/LexIdeaProcessor-423939494c7152555769-build.zip"
+        },
+        "MissedFaqPingProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/MissedFaqPingProcessor-59494f723069464b4844-build.zip"
+        },
+        "OrgActionDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgActionDynamoToElastic-64766b48766f43377742-build.zip"
+        },
+        "OrgActionOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgActionOperations-637a5461735544665250-build.zip"
+        },
+        "OrgConversationDynamodToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgConversationDynamodToElastic-7854796271437956694f-build.zip"
+        },
+        "OrgConversationsOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgConversationsOperations-35536373346c6b6a4831-build.zip"
+        },
+        "OrgEmployeeDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgEmployeeDynamoToElastic-316a324c36332b466942-build.zip"
+        },
+        "OrgEmployeeFileUploadToS3": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgEmployeeFileUploadToS3-2b7445384f7550347a45-build.zip"
+        },
+        "OrgEmployeeStatusUpdates": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgEmployeeStatusUpdates-5451364f632b616a6375-build.zip"
+        },
+        "OrgEventDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgEventDynamoToElastic-3846507174412b646c66-build.zip"
+        },
+        "OrgEventOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgEventOperations-526b666a337771547a52-build.zip"
+        },
+        "OrgFaqDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgFaqDynamoToElastic-5847656e535877743343-build.zip"
+        },
+        "OrgFaqOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgFaqOperations-6a6e6e6479572b2f7571-build.zip"
+        },
+        "OrgInsightDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgInsightDynamoToElastic-372f4e715a34524d4d58-build.zip"
+        },
+        "OrgInsightOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgInsightOperations-616e4f313242514b4137-build.zip"
+        },
+        "OrgOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgOperations-76454163553752507336-build.zip"
+        },
+        "OrgPattern": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgPattern-48302f4b695068465844-build.zip"
+        },
+        "OrgPatternDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgPatternDynamoToElastic-513948323473784a5334-build.zip"
+        },
+        "OrgRolePermissions": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgRolePermissions-65454d474e5932624349-build.zip"
+        },
+        "OrgStepDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgStepDynamoToElastic-3136303334687371502f-build.zip"
+        },
+        "OrgStepOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgStepOperations-616b6d546636466a5557-build.zip"
+        },
+        "OrgUserNotificationProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgUserNotificationProcessor-426e666e334a336d6f58-build.zip"
+        },
+        "OrgUserOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgUserOperations-45776363354d6469617a-build.zip"
+        },
+        "OrgWorkflow": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgWorkflow-5768476a374b33527367-build.zip"
+        },
+        "OrgWorkflowDynamoToElastic": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgWorkflowDynamoToElastic-50394b2f57486a587366-build.zip"
+        },
+        "OrgWorkflowOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/OrgWorkflowOperations-30584d324a5047694564-build.zip"
+        },
+        "PingProcessor": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/PingProcessor-5956694d5a6277357075-build.zip"
+        },
+        "RulesBaseInsightGenerator": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/RulesBaseInsightGenerator-73482b65616936646d54-build.zip"
+        },
+        "S3Triggerc74c5f02": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/S3Triggerc74c5f02-37647347644f58796837-build.zip"
+        },
+        "SentimentOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/SentimentOperations-2b39394f7466346a3348-build.zip"
+        },
+        "SlackAuthenticationOperations": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/SlackAuthenticationOperations-533272707872614d6133-build.zip"
+        },
+        "TeamsAuthentication": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/TeamsAuthentication-46584f634b4b63786450-build.zip"
+        },
+        "TeamsConversationsHandler": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/TeamsConversationsHandler-484174674a6e76634254-build.zip"
+        },
+        "UpdateUserWithSlackId": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/UpdateUserWithSlackId-46442b466d7471354378-build.zip"
+        },
+        "WebchatHandler": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/WebchatHandler-4d6c7469424342466f4f-build.zip"
+        },
+        "berryCommonModels": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/berryCommonModels-LambdaLayerVersiondad16686-build.zip"
+        },
+        "berryCommonUtils": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/berryCommonUtils-LambdaLayerVersion13c6d6af-build.zip"
+        },
+        "berryCommunicationUtils": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/berryCommunicationUtils-LambdaLayerVersionae0640c0-build.zip"
+        },
+        "berryDatabaseUtils": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/berryDatabaseUtils-LambdaLayerVersion8ecac270-build.zip"
+        },
+        "berrySearchUtils": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/berrySearchUtils-LambdaLayerVersion928e895a-build.zip"
+        },
+        "sayHelloFx": {
+          "deploymentBucketName": "amplify-berry-staging-192237-deployment",
+          "s3Key": "amplify-builds/sayHelloFx-68796d4461624c37656a-build.zip"
+        }
+      },
+      "storage": {
+        "Conversations": {},
+        "EmployeeFileList": {},
+        "Org": {},
+        "OrgAction": {},
+        "OrgEvent": {},
+        "OrgFaq": {},
+        "OrgFaqAnswer": {},
+        "OrgInsights": {},
+        "OrgPattern": {},
+        "OrgPing": {},
+        "OrgRolePermissions": {},
+        "OrgStep": {},
+        "OrgUser": {},
+        "OrgWorkflow": {}
+      }
+    }
+  }
+}

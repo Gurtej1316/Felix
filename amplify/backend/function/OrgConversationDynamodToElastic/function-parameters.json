@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "storage": {
+      "OrgUser": [
+        "read",
+        "update"
+      ],
+      "Org": [
+        "read"
+      ],
+      "Conversations": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "OrgWorkflow": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berrySearchUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    },
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berryDatabaseUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    },
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berryCommonUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    }
+  ]
+}

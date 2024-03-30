@@ -1,0 +1,570 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Parameters": {
+    "CloudWatchRule": {
+      "Type": "String",
+      "Default": "NONE",
+      "Description": " Schedule Expression"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "env": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    "storageOrgName": {
+      "Type": "String",
+      "Default": "storageOrgName"
+    },
+    "storageOrgArn": {
+      "Type": "String",
+      "Default": "storageOrgArn"
+    },
+    "storageOrgStreamArn": {
+      "Type": "String",
+      "Default": "storageOrgStreamArn"
+    },
+    "apiberryOrgAPIApiName": {
+      "Type": "String",
+      "Default": "apiberryOrgAPIApiName"
+    },
+    "apiberryOrgAPIApiId": {
+      "Type": "String",
+      "Default": "apiberryOrgAPIApiId"
+    },
+    "functionberryCommonUtilsArn": {
+      "Type": "String",
+      "Default": "functionberryCommonUtilsArn"
+    },
+    "storageOrgUserName": {
+      "Type": "String",
+      "Default": "storageOrgUserName"
+    },
+    "storageOrgUserArn": {
+      "Type": "String",
+      "Default": "storageOrgUserArn"
+    },
+    "storageOrgUserStreamArn": {
+      "Type": "String",
+      "Default": "storageOrgUserStreamArn"
+    },
+    "authcognitod96d0b0eUserPoolId": {
+      "Type": "String",
+      "Default": "authcognitod96d0b0eUserPoolId"
+    },
+    "functionberrySearchUtilsArn": {
+      "Type": "String",
+      "Default": "functionberrySearchUtilsArn"
+    },
+    "storageOrgRolePermissionsName": {
+      "Type": "String",
+      "Default": "storageOrgRolePermissionsName"
+    },
+    "storageOrgRolePermissionsArn": {
+      "Type": "String",
+      "Default": "storageOrgRolePermissionsArn"
+    },
+    "storageOrgRolePermissionsStreamArn": {
+      "Type": "String",
+      "Default": "storageOrgRolePermissionsStreamArn"
+    },
+    "functionberryDatabaseUtilsArn": {
+      "Type": "String",
+      "Default": "functionberryDatabaseUtilsArn"
+    },
+    "storageOrgStepName": {
+      "Type": "String",
+      "Default": "storageOrgStepName"
+    },
+    "storageOrgStepArn": {
+      "Type": "String",
+      "Default": "storageOrgStepArn"
+    },
+    "storageOrgStepStreamArn": {
+      "Type": "String",
+      "Default": "storageOrgStepStreamArn"
+    },
+    "storageOrgWorkflowName": {
+      "Type": "String",
+      "Default": "storageOrgWorkflowName"
+    },
+    "storageOrgWorkflowArn": {
+      "Type": "String",
+      "Default": "storageOrgWorkflowArn"
+    },
+    "storageOrgWorkflowStreamArn": {
+      "Type": "String",
+      "Default": "storageOrgWorkflowStreamArn"
+    },
+    "functionberryCommunicationUtilsArn": {
+      "Type": "String",
+      "Default": "functionberryCommunicationUtilsArn"
+    }
+  },
+  "Conditions": {
+    "ShouldNotCreateEnvResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "env"
+        },
+        "NONE"
+      ]
+    }
+  },
+  "Resources": {
+    "LambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Metadata": {
+        "aws:asset:path": "./src",
+        "aws:asset:property": "Code"
+      },
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
+        "Handler": "index.handler",
+        "FunctionName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "SlackAuthenticationOperations",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "SlackAuthenticationOperations",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "ENV": {
+              "Ref": "env"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "STORAGE_ORG_NAME": {
+              "Ref": "storageOrgName"
+            },
+            "STORAGE_ORG_ARN": {
+              "Ref": "storageOrgArn"
+            },
+            "STORAGE_ORG_STREAMARN": {
+              "Ref": "storageOrgStreamArn"
+            },
+            "API_BERRYORGAPI_APINAME": {
+              "Ref": "apiberryOrgAPIApiName"
+            },
+            "API_BERRYORGAPI_APIID": {
+              "Ref": "apiberryOrgAPIApiId"
+            },
+            "STORAGE_ORGUSER_NAME": {
+              "Ref": "storageOrgUserName"
+            },
+            "STORAGE_ORGUSER_ARN": {
+              "Ref": "storageOrgUserArn"
+            },
+            "STORAGE_ORGUSER_STREAMARN": {
+              "Ref": "storageOrgUserStreamArn"
+            },
+            "AUTH_COGNITOD96D0B0E_USERPOOLID": {
+              "Ref": "authcognitod96d0b0eUserPoolId"
+            },
+            "STORAGE_ORGROLEPERMISSIONS_NAME": {
+              "Ref": "storageOrgRolePermissionsName"
+            },
+            "STORAGE_ORGROLEPERMISSIONS_ARN": {
+              "Ref": "storageOrgRolePermissionsArn"
+            },
+            "STORAGE_ORGROLEPERMISSIONS_STREAMARN": {
+              "Ref": "storageOrgRolePermissionsStreamArn"
+            },
+            "STORAGE_ORGSTEP_NAME": {
+              "Ref": "storageOrgStepName"
+            },
+            "STORAGE_ORGSTEP_ARN": {
+              "Ref": "storageOrgStepArn"
+            },
+            "STORAGE_ORGSTEP_STREAMARN": {
+              "Ref": "storageOrgStepStreamArn"
+            },
+            "STORAGE_ORGWORKFLOW_NAME": {
+              "Ref": "storageOrgWorkflowName"
+            },
+            "STORAGE_ORGWORKFLOW_ARN": {
+              "Ref": "storageOrgWorkflowArn"
+            },
+            "STORAGE_ORGWORKFLOW_STREAMARN": {
+              "Ref": "storageOrgWorkflowStreamArn"
+            }
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "LambdaExecutionRole",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs14.x",
+        "Layers": [
+          {
+            "Ref": "functionberryCommonUtilsArn"
+          },
+          {
+            "Ref": "functionberrySearchUtilsArn"
+          },
+          {
+            "Ref": "functionberryDatabaseUtilsArn"
+          },
+          {
+            "Ref": "functionberryCommunicationUtilsArn"
+          }
+        ],
+        "Timeout": "25"
+      }
+    },
+    "LambdaExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "berryLambdaRole59f381e7",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "berryLambdaRole59f381e7",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "lambdaexecutionpolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "secretsmanager:GetSecretValue"
+              ],
+              "Resource": {
+                "Fn::Sub": [
+                  "arn:aws:secretsmanager:${region}:${account}:secret:*",
+                  {
+                    "region": {
+                      "Ref": "AWS::Region"
+                    },
+                    "account": {
+                      "Ref": "AWS::AccountId"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Resource": {
+                "Fn::Sub": [
+                  "arn:aws:logs:${region}:${account}:log-group:/aws/lambda/${lambda}:log-stream:*",
+                  {
+                    "region": {
+                      "Ref": "AWS::Region"
+                    },
+                    "account": {
+                      "Ref": "AWS::AccountId"
+                    },
+                    "lambda": {
+                      "Ref": "LambdaFunction"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*",
+                "dynamodb:Delete*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgUserArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgUserArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*",
+                "dynamodb:Delete*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgStepArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgStepArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgWorkflowArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgWorkflowArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*",
+                "dynamodb:Delete*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageOrgRolePermissionsArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageOrgRolePermissionsArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "Name": {
+      "Value": {
+        "Ref": "LambdaFunction"
+      }
+    },
+    "Arn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "LambdaFunction",
+          "Arn"
+        ]
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
+      }
+    },
+    "LambdaExecutionRole": {
+      "Value": {
+        "Ref": "LambdaExecutionRole"
+      }
+    },
+    "LambdaExecutionRoleArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "LambdaExecutionRole",
+          "Arn"
+        ]
+      }
+    }
+  }
+}

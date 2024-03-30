@@ -1,0 +1,3473 @@
+{
+  "api": {
+    "berryOrgAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "GTokenOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SentimentOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgActionOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgUserOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "ConversationsOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgPattern"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgEventOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "TeamsAuthentication"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgStepOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "AuthOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgRolePermissions"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "WebchatHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgEmployeeFileUploadToS3"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SlackAuthenticationOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "TeamsConversationsHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgFaqOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgConversationsOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgWorkflowOperations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrgInsightOperations"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "sayHello": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sayHelloFx"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "cognitod96d0b0e": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "cognitod96d0b0e"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "AuthOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryActionProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgAction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryCampaignCompletionProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryCustomCognitoMailMsgHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryIdeaProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPattern"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryIntroProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "BerryWebOrgDataScrapper": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ConversationsOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "GTokenOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "JourneyEventProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexActionProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgAction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexCampaignProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexContextChecker": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexFaqFulfilment": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaq"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaqAnswer"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexFaqVoteCapture": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaq"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LexIdeaProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPattern"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "MissedFaqPingProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaq"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgActionDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgAction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgActionOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgAction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgConversationDynamodToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgConversationsOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgEmployeeDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgEmployeeFileUploadToS3": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "EmployeeFileList"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgEmployeeStatusUpdates": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgEventDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgEvent"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgEventOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgEvent"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgFaqDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaq"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgFaqOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgFaq"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgInsightDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgInsights"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgInsightOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgInsights"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgPattern": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPattern"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgPatternDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPattern"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgRolePermissions": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgStepDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgStepOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgUserNotificationProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgUserOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgWorkflow": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgWorkflowDynamoToElastic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "OrgWorkflowOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "PingProcessor": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPing"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RulesBaseInsightGenerator": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgPattern"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgInsights"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "S3Triggerc74c5f02": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "SentimentOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "Conversations"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "SlackAuthenticationOperations": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "TeamsAuthentication": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgStep"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgWorkflow"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgRolePermissions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "TeamsConversationsHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UpdateUserWithSlackId": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "OrgUser"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "WebchatHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "Org"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "berryCommonModels": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "berryCommonUtils": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "berryCommunicationUtils": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "berryDatabaseUtils": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "berrySearchUtils": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "sayHelloFx": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AuthOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AuthOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_AuthOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AuthOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryActionProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryActionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryActionProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryActionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryCampaignCompletionProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryCampaignCompletionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryCampaignCompletionProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryCampaignCompletionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryCustomCognitoMailMsgHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryCustomCognitoMailMsgHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryCustomCognitoMailMsgHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryCustomCognitoMailMsgHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryIdeaProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryIdeaProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryIdeaProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryIdeaProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryIntroProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryIntroProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryIntroProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryIntroProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryWebOrgDataScrapper_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryWebOrgDataScrapper"
+        }
+      ]
+    },
+    "AMPLIFY_function_BerryWebOrgDataScrapper_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "BerryWebOrgDataScrapper"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConversationsOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConversationsOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_ConversationsOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ConversationsOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_GTokenOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GTokenOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_GTokenOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "GTokenOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_JourneyEventProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "JourneyEventProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_JourneyEventProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "JourneyEventProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexActionProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexActionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexActionProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexActionProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexCampaignProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexCampaignProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexCampaignProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexCampaignProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexContextChecker_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexContextChecker"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexContextChecker_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexContextChecker"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexFaqFulfilment_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexFaqFulfilment"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexFaqFulfilment_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexFaqFulfilment"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexFaqVoteCapture_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexFaqVoteCapture"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexFaqVoteCapture_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexFaqVoteCapture"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexIdeaProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexIdeaProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_LexIdeaProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LexIdeaProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_MissedFaqPingProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MissedFaqPingProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_MissedFaqPingProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MissedFaqPingProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgActionDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgActionDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgActionDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgActionDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgActionOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgActionOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgActionOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgActionOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgConversationDynamodToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgConversationDynamodToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgConversationDynamodToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgConversationDynamodToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgConversationsOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgConversationsOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgConversationsOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgConversationsOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeFileUploadToS3_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeFileUploadToS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeFileUploadToS3_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeFileUploadToS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeStatusUpdates_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeStatusUpdates"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEmployeeStatusUpdates_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEmployeeStatusUpdates"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEventDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEventDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEventDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEventDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEventOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEventOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgEventOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgEventOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgFaqDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgFaqDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgFaqDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgFaqDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgFaqOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgFaqOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgFaqOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgFaqOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgInsightDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgInsightDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgInsightDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgInsightDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgInsightOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgInsightOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgInsightOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgInsightOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgPatternDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgPatternDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgPatternDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgPatternDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgPattern_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgPattern"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgPattern_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgPattern"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgRolePermissions_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgRolePermissions"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgRolePermissions_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgRolePermissions"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgStepDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgStepDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgStepDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgStepDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgStepOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgStepOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgStepOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgStepOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgUserNotificationProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgUserNotificationProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgUserNotificationProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgUserNotificationProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgUserOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgUserOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgUserOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgUserOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflowDynamoToElastic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflowDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflowDynamoToElastic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflowDynamoToElastic"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflowOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflowOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflowOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflowOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflow_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_OrgWorkflow_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "OrgWorkflow"
+        }
+      ]
+    },
+    "AMPLIFY_function_PingProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PingProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_PingProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PingProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_RulesBaseInsightGenerator_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RulesBaseInsightGenerator"
+        }
+      ]
+    },
+    "AMPLIFY_function_RulesBaseInsightGenerator_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RulesBaseInsightGenerator"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Triggerc74c5f02_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggerc74c5f02"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Triggerc74c5f02_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggerc74c5f02"
+        }
+      ]
+    },
+    "AMPLIFY_function_SentimentOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SentimentOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_SentimentOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SentimentOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_SlackAuthenticationOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SlackAuthenticationOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_SlackAuthenticationOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SlackAuthenticationOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_TeamsAuthentication_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TeamsAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_TeamsAuthentication_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TeamsAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_TeamsConversationsHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TeamsConversationsHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_TeamsConversationsHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TeamsConversationsHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateUserWithSlackId_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateUserWithSlackId"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateUserWithSlackId_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateUserWithSlackId"
+        }
+      ]
+    },
+    "AMPLIFY_function_WebchatHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "WebchatHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_WebchatHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "WebchatHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommonModels_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommonModels_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommonModels"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommonUtils_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommonUtils_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommonUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommunicationUtils_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryCommunicationUtils_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryCommunicationUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryDatabaseUtils_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berryDatabaseUtils_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berryDatabaseUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berrySearchUtils_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_berrySearchUtils_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "berrySearchUtils"
+        }
+      ]
+    },
+    "AMPLIFY_function_sayHelloFx_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sayHelloFx"
+        }
+      ]
+    },
+    "AMPLIFY_function_sayHelloFx_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sayHelloFx"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "Conversations": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "EmployeeFileList": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "S3Triggerc74c5f02"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    },
+    "Org": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgAction": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgEvent": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgFaq": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgFaqAnswer": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgInsights": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgPattern": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgPing": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgRolePermissions": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgStep": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgUser": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "OrgWorkflow": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

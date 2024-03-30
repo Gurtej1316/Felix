@@ -1,0 +1,14 @@
+{
+  "resourceName": "OrgInsights",
+  "tableName": "OrgInsights",
+  "partitionKey": {
+    "fieldName": "orgId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "insightId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

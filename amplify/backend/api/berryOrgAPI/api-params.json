@@ -1,0 +1,754 @@
+{
+    "paths": [
+        {
+            "name": "/campaign",
+            "lambdaFunction": "OrgCampaign",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/campaign"
+        },
+        {
+            "name": "/gtoken",
+            "lambdaFunction": "GTokenOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/GET"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/gtoken"
+        },
+        {
+            "name": "/question",
+            "lambdaFunction": "OrgQuestionOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/question"
+        },
+        {
+            "name": "/sentiment",
+            "lambdaFunction": "SentimentOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/sentiment"
+        },
+        {
+            "name": "/berrychat",
+            "lambdaFunction": "DialogFlowProcessor",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/berrychat"
+        },
+        {
+            "name": "/action",
+            "lambdaFunction": "OrgActionOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/action"
+        },
+        {
+            "name": "/org",
+            "lambdaFunction": "OrgOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/GET"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/org"
+        },
+        {
+            "name": "/user",
+            "lambdaFunction": "OrgUserOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/user"
+        },
+        {
+            "name": "/nps",
+            "lambdaFunction": "OrgNps",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/nps"
+        },
+        {
+            "name": "/orgconversations",
+            "lambdaFunction": "ConversationsOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/orgconversations"
+        },
+        {
+            "name": "/convresponses",
+            "lambdaFunction": "ConversationsOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/convresponses"
+        },
+        {
+            "name": "/slackAuth",
+            "lambdaFunction": "SlackAuthenticationOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/slackAuth"
+        },
+        {
+            "name": "/fileUpload",
+            "lambdaFunction": "OrgEmployeeFileUploadToS3",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/fileUpload"
+        },
+        {
+            "name": "/campaigntemplate",
+            "lambdaFunction": "OrgCampaignTemplates",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/campaigntemplate"
+        },
+        {
+            "name": "/pattern",
+            "lambdaFunction": "OrgPattern",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/pattern"
+        },
+        {
+            "name": "/event",
+            "lambdaFunction": "OrgEventOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/event"
+        },
+        {
+            "name": "/filteredcampaigns",
+            "lambdaFunction": "OrgCampaign",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/filteredcampaigns"
+        },
+        {
+            "name": "/filteredconversations",
+            "lambdaFunction": "ConversationsOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/filteredconversations"
+        },
+        {
+            "name": "/filteredResponses",
+            "lambdaFunction": "ConversationsOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/filteredResponses"
+        },
+        {
+            "name": "/teamsAuthentication",
+            "lambdaFunction": "TeamsAuthentication",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/teamsAuthentication"
+        },
+        {
+            "name": "/employeeKeyword",
+            "lambdaFunction": "OrgUserOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/employeeKeyword"
+        },
+        {
+            "name": "/step",
+            "lambdaFunction": "OrgStepOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/step"
+        },
+        {
+            "name": "/workflow",
+            "lambdaFunction": "OrgWorkflow",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/workflow"
+        },
+        {
+            "name": "/teamsUser",
+            "lambdaFunction": "OrgUserOperations",
+            "privacy": {
+                "open": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/teamsUser"
+        },
+        {
+            "name": "/interaction",
+            "lambdaFunction": "OrgInteractionOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ]
+            },
+            "policyResourceName": "/interaction"
+        },
+        {
+            "name": "/auth",
+            "lambdaFunction": "AuthOperations",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/auth"
+        }
+    ],
+    "resourceName": "berryOrgAPI",
+    "apiName": "berryOrgAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "OrgCampaign"
+        },
+        {
+            "lambdaFunction": "GTokenOperations"
+        },
+        {
+            "lambdaFunction": "OrgQuestionOperations"
+        },
+        {
+            "lambdaFunction": "SentimentOperations"
+        },
+        {
+            "lambdaFunction": "DialogFlowProcessor"
+        },
+        {
+            "lambdaFunction": "OrgActionOperations"
+        },
+        {
+            "lambdaFunction": "OrgOperations"
+        },
+        {
+            "lambdaFunction": "OrgUserOperations"
+        },
+        {
+            "lambdaFunction": "OrgNps"
+        },
+        {
+            "lambdaFunction": "ConversationsOperations"
+        },
+        {
+            "lambdaFunction": "SlackAuthenticationOperations"
+        },
+        {
+            "lambdaFunction": "OrgEmployeeFileUploadToS3"
+        },
+        {
+            "lambdaFunction": "OrgCampaignTemplates"
+        },
+        {
+            "lambdaFunction": "OrgPattern"
+        },
+        {
+            "lambdaFunction": "OrgEventOperations"
+        },
+        {
+            "lambdaFunction": "TeamsAuthentication"
+        },
+        {
+            "lambdaFunction": "OrgStepOperations"
+        },
+        {
+            "lambdaFunction": "OrgWorkflow"
+        },
+        {
+            "lambdaFunction": "OrgInteractionOperations"
+        },
+        {
+            "lambdaFunction": "AuthOperations"
+        }
+    ],
+    "privacy": {
+        "auth": 24,
+        "unauth": 24,
+        "authRoleName": "amplify-berry-sandboxah-164716-authRole",
+        "unAuthRoleName": "amplify-berry-sandboxah-164716-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "OrgCampaign",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "GTokenOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgQuestionOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "SentimentOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "DialogFlowProcessor",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgActionOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgUserOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgNps",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "ConversationsOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "SlackAuthenticationOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgEmployeeFileUploadToS3",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgCampaignTemplates",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgPattern",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgEventOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "TeamsAuthentication",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgStepOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgWorkflow",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "OrgInteractionOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "AuthOperations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "e960585b"
+}

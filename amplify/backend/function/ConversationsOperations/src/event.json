@@ -1,0 +1,12 @@
+{
+  "resource": "/conversations/{proxy+}",
+  "path": "/filteredResponses/T019YJK1ZLH",
+  "httpMethod": "GET",
+  "queryStringParameters": {
+    "filters": [
+      {
+        "questionId": "56eb461b-9086-4b61-807f-d8125e9570b9"
+      }
+    ]
+  }
+}

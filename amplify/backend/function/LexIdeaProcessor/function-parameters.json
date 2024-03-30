@@ -1,0 +1,18 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berryCommonUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    }
+  ],
+  "permissions": {
+    "storage": {
+      "OrgPattern": [
+        "update"
+      ]
+    }
+  }
+}

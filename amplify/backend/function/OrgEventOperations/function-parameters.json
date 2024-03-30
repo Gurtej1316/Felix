@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "storage": {
+      "Org": [
+        "read",
+        "update"
+      ],
+      "OrgEvent": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berryCommonUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    },
+    {
+      "type": "ProjectLayer",
+      "resourceName": "berrySearchUtils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    }
+  ]
+}
