@@ -224,7 +224,7 @@ const processCampaignQuestions = async function (intentRequest,userData, callbac
           lastInteractionDate : new Date().toISOString(),
           lastPingEntityId : "",
           lastPingType : ""
-        };
+        }; 
         await updateUserToDB(userData.orgId,userData.userId,updateParams);
 
         message = sentimentLabel ? services.getRandomFillTexts(sentimentLabel) + " " + services.getRandomCampaignEndMessage() : services.getRandomCampaignEndMessage();
